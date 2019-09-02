@@ -1,3 +1,13 @@
-<p>
-  vendee-profile-page works!
-</p>
+<table>
+  <tr>
+    <th>Vendee: </th>
+  </tr>
+  <tr *ngFor="let vendee of vendees">
+    <td>{{ vendee.vendeeName }}</td>
+  </tr>
+  <tr>
+    <td>
+      <a [routerLink]="'/vendeeProfile'"> FOO </a>
+    </td>
+  </tr>
+</table>

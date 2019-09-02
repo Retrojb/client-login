@@ -1,0 +1,11 @@
+.row{
+  border: 2px black solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .nav-link {
+    align-content: center;
+    justify-content: center;
+    .btn{ color: red; }
+  }
+}

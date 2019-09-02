@@ -11,6 +11,9 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TempVendeeDataService } from 'src/app/services/temp-vendee-data.service';
 import { VendeeProfilePageComponent } from './components/vendee-profile-page/vendee-profile-page.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { VendeeService } from './services/vendee.service';
 
 @NgModule({
   declarations: [
@@ -19,14 +22,16 @@ import { VendeeProfilePageComponent } from './components/vendee-profile-page/ven
     LoginComponent,
     RegistrationComponent,
     AboutUsComponent,
-    InMemoryWebApiModule,
-    VendeeProfilePageComponent
+    VendeeProfilePageComponent,
+    NavigationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    InMemoryWebApiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
