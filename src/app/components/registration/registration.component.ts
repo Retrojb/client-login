@@ -8,8 +8,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
 
-  userRegistrationForm = new FormGroup({
-    userName: new FormControl(''),
+  vendeeRegistrationForm = new FormGroup({
+    vendeeName: new FormControl(''),
     password: new FormControl(''),
     email: new FormControl(''),
     address: new FormGroup ({
@@ -26,4 +26,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
+  addNewUser() {
+    const vendee = this.vendeeRegistrationForm;
+  }
 }

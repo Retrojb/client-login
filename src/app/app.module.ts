@@ -8,6 +8,8 @@ import { LoginComponent } from './components/login/login.component';
 import {  ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { TempVendeeDataService } from 'src/services/temp-vendee-data.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     HomeComponent,
     LoginComponent,
     RegistrationComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    InMemoryWebApiModule
   ],
   imports: [
     BrowserModule,
