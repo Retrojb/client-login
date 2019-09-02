@@ -9,7 +9,8 @@ import {  ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { TempVendeeDataService } from 'src/services/temp-vendee-data.service';
+import { TempVendeeDataService } from 'src/app/services/temp-vendee-data.service';
+import { VendeeProfilePageComponent } from './components/vendee-profile-page/vendee-profile-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TempVendeeDataService } from 'src/services/temp-vendee-data.service';
     LoginComponent,
     RegistrationComponent,
     AboutUsComponent,
-    InMemoryWebApiModule
+    InMemoryWebApiModule,
+    VendeeProfilePageComponent
   ],
   imports: [
     BrowserModule,
