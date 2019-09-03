@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { Vendee, VendeeService } from 'src/app/services/vendee.service';
+import { VendeeService } from 'src/app/services/vendee.service';
 
 
 @Component({
@@ -10,8 +10,8 @@ import { Vendee, VendeeService } from 'src/app/services/vendee.service';
 })
 export class RegistrationComponent implements OnInit {
 
+  // have to make changes here
   register: FormGroup;
-  vendee: Vendee;
   tempId: 1;
   displayData: boolean;
 
@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
     vendeeName: ['', Validators.required],
     password: ['', Validators.required],
     email: ['', Validators.required],
-    gender: [ 'male', 'female', 'none ya business' ],
+    gender: [[ 'male', 'female', 'none ya business' ]],
     age: [ null ]
   });
 
@@ -37,20 +37,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
-  getVendee() {  //comeback and remove temp id
-    this.vendeeService.getVendee(this.tempId)
-    .subscribe(vendee => {
-      this.vendee = vendee;
-      this.displayData = true ;
-    });
-  }
-
   addVendee() {
-    this.vendeeService.addVendee(this.vRegForm.value)
-      .subscribe( v => {
-        this.vendee = v;
-        console.log(this.vendee);
-      });
-    this.getVendee();
+    this.vendeeService.addVendee();
   }
 }

@@ -13,6 +13,7 @@ import { VendeeProfilePageComponent } from './components/vendee-profile-page/ven
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VendeeService } from './services/vendee.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     InMemoryWebApiModule
   ],
-  providers: [],
+  providers: [ VendeeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Vendee, VendeeService } from 'src/app/services/vendee.service';
+import { VendeeService } from 'src/app/services/vendee.service';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -11,22 +11,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class VendeeProfilePageComponent implements OnInit {
 
-  vendees: Vendee[] = [];
-  vendee: Vendee;
-
-  displayData: boolean;
-  tempId: 1;
-
   constructor(private vendeeService: VendeeService) { }
 
-  ngOnInit() {
-    this.getVendee();
-  }
-
-  getVendee() {
-    this.vendeeService.getVendee(this.tempId)
-    .subscribe(vendee => {
-      this.vendee = vendee;
-    });
-  }
+  ngOnInit() { }
 }
