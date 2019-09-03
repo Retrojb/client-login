@@ -1,3 +1,64 @@
-<p>
-  registration works!
-</p>
+<div class="container">
+  <form>
+    <h3>New Veende Name</h3>
+    <div class="form-group">
+      <label> User Name:</label>
+      <input type="text" class="formControl" />
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="text" class="formControl" />
+    </div>
+    <div class="form-group">
+      <label>First Name:</label>
+      <input type="text" class="formControl" />
+    </div>
+    <div class="form-group">
+      <label>Last Name:</label>
+      <input type="text" class="formControl" />
+    </div>
+    <div class="form-group">
+      <label>Preferred Name: </label>
+      <input type="text" class="formControl" />
+    </div>
+    <div formGroupName="address">
+      <h3>Address</h3>
+      <div class="form-group">
+        <label>
+          Street:
+          <input type="text" formControlName="street" />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          City:
+          <input type="text" formControlName="city" />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          State:
+          <input type="text" formControlName="state" />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          Zip Code:
+          <input type="text" formControlName="zip" />
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group btn">
+      <label>Registered to Vote?</label>
+      <input type="checkbox" class="formControl" />
+    </div>
+  </form>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [routerLink]="'/'">
+      Login
+    </button>
+  </div>
+</div>
+<app-footer></app-footer>

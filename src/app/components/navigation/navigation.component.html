@@ -1,20 +1,29 @@
-<div class="container-12">
-  <div class="row">
-    <div class="log">
-    <img src="../../../assets/clifford-clipart.png"  height=40px width=40px />
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="log">
+        <img
+          src="../../../assets/clifford-clipart.png"
+          height="40px"
+          width="40px"
+        />
+      </div>
+      <div class="nav-link">
+        <button class="btn" [routerLink]="'/'">Home</button>
+        <!-- add logos instead of words-->
+      </div>
+      <div class="nav-link">
+        <button class="btn" [routerLink]="'/aboutUs'">About Us</button>
+        <!-- add logos instead of words-->
+      </div>
+      <div class="nav-link">
+        <button class="btn" [routerLink]="'/registration'">Registration</button>
+        <!-- add logos instead of words-->
+      </div>
+      <div class="nav-link">
+        <button [routerLink]="'/login'">Login</button>
+        <!-- add logos instead of words-->
+      </div>
+    </div>
   </div>
-  <div class="nav-link">
-     <button class="btn" [routerLink]="'/'">Home</button>  <!-- add logos instead of words-->
-  </div>
-  <div class="nav-link">
-      <button class="btn" [routerLink]="'/aboutUs'">About Us</button>  <!-- add logos instead of words-->
-   </div>
-   <div class="nav-link">
-      <button class="btn" [routerLink]="'/registration'">Registration</button>  <!-- add logos instead of words-->
-   </div>
-   <div class="btn" class="nav-link">
-      <button [routerLink]="'/login'">Login</button>  <!-- add logos instead of words-->
-   </div>
-  </div>
-
-</div>
+</nav>
