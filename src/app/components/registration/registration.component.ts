@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { VendeeService } from 'src/app/services/vendee.service';
-
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MortyService } from '../../services/morty.service';
 
 @Component({
   selector: 'app-registration',
@@ -19,7 +18,7 @@ export class RegistrationComponent implements OnInit {
     vendeeName: ['', Validators.required],
     password: ['', Validators.required],
     email: ['', Validators.required],
-    gender: [[ 'male', 'female', 'none ya business' ]],
+    gender: [[ 'Morty', 'Summer', 'Mr. Poopy Butthole' ]],
     age: [ null ]
   });
 
@@ -31,13 +30,13 @@ export class RegistrationComponent implements OnInit {
 
   });
 
-  constructor(private vendeeService: VendeeService,
+  constructor(private mortyService: MortyService,
               private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
-  addVendee() {
-    this.vendeeService.addVendee();
+  addMorty() {
+    this.mortyService.addMorty();
   }
 }

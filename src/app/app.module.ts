@@ -9,11 +9,10 @@ import {  ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { VendeeProfilePageComponent } from './components/vendee-profile-page/vendee-profile-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { VendeeService } from './services/vendee.service';
+import { MortyService } from './services/morty.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { VendeeService } from './services/vendee.service';
     LoginComponent,
     RegistrationComponent,
     AboutUsComponent,
-    VendeeProfilePageComponent,
     NavigationComponent,
     FooterComponent
   ],
@@ -34,7 +32,7 @@ import { VendeeService } from './services/vendee.service';
     HttpClientModule,
     InMemoryWebApiModule
   ],
-  providers: [ VendeeService ],
+  providers: [ MortyService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

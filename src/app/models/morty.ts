@@ -1,9 +1,8 @@
-export class Vendee {
-  id: number;
-  vendeeName: string;
-  vendeeEmail: string;
-  vendeeFirstName: string;
-  vendeeLastName: string;
+export class Morty {
+  constructor (
+    private id: number,
+    private mortyName: string,
+    private mortyEmail: string) {}
 }
 
 export class Domicile {
