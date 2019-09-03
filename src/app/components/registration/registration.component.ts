@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Vendee, VendeeService } from 'src/app/services/vendee.service';
 
 
@@ -10,25 +10,29 @@ import { Vendee, VendeeService } from 'src/app/services/vendee.service';
 })
 export class RegistrationComponent implements OnInit {
 
+  register: FormGroup;
   vendee: Vendee;
   tempId: 1;
   displayData: boolean;
 
-  vendeeRegistrationForm = new FormGroup({
-    vendeeName: new FormControl(''),
-    password: new FormControl(''),
-    email: new FormControl(''),
-    address: new FormGroup ({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl('')
-    }),
-    gender: new FormControl([ 'male', 'female', 'none ya business' ]),
-    age: new FormControl('')
+  vRegForm = this.fb.group({
+    vendeeName: ['', Validators.required],
+    password: ['', Validators.required],
+    email: ['', Validators.required],
+    gender: [ 'male', 'female', 'none ya business' ],
+    age: [ null ]
   });
 
-  constructor(private vendeeService: VendeeService) { }
+  vRegAddress = this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
+
+  });
+
+  constructor(private vendeeService: VendeeService,
+              private fb: FormBuilder) { }
 
   ngOnInit() {
   }
@@ -42,7 +46,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   addVendee() {
-    this.vendeeService.addVendee(this.vendeeRegistrationForm.value)
+    this.vendeeService.addVendee(this.vRegForm.value)
       .subscribe( v => {
         this.vendee = v;
         console.log(this.vendee);
