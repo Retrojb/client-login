@@ -20,13 +20,13 @@ export class VendeeProfilePageComponent implements OnInit {
   constructor(private vendeeService: VendeeService) { }
 
   ngOnInit() {
-    this.getVendees();
+    this.getVendee();
   }
 
-  getVendees() {
-    this.vendeeService.getVendees()
+  getVendee() {
+    this.vendeeService.getVendee(this.tempId)
     .subscribe(vendee => {
-      this.vendees = vendee;
+      this.vendee = vendee;
     });
   }
 }
