@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MortyService } from '../../services/morty.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -30,13 +30,10 @@ export class RegistrationComponent implements OnInit {
 
   });
 
-  constructor(private mortyService: MortyService,
+  constructor(private userService: UserService,
               private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
-  addMorty() {
-    this.mortyService.addMorty();
-  }
 }

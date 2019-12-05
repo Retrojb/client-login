@@ -12,7 +12,10 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MortyService } from './services/morty.service';
+import { UserService } from './services/user.service';
+import { CreateUserComponent } from './components/create-user/create-user.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserEditProfileComponent } from './components/user-edit-profile/user-edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { MortyService } from './services/morty.service';
     RegistrationComponent,
     AboutUsComponent,
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    CreateUserComponent,
+    UserProfileComponent,
+    UserEditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { MortyService } from './services/morty.service';
     HttpClientModule,
     InMemoryWebApiModule
   ],
-  providers: [ MortyService ],
+  providers: [ UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
