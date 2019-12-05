@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MortyService } from '../../services/morty.service';
-
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user.model';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -9,34 +9,12 @@ import { MortyService } from '../../services/morty.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  // have to make changes here
-  register: FormGroup;
-  tempId: 1;
-  displayData: boolean;
 
-  vRegForm = this.fb.group({
-    vendeeName: ['', Validators.required],
-    password: ['', Validators.required],
-    email: ['', Validators.required],
-    gender: [[ 'Morty', 'Summer', 'Mr. Poopy Butthole' ]],
-    age: [ null ]
-  });
-
-  vRegAddress = this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
-
-  });
-
-  constructor(private mortyService: MortyService,
+  constructor(private userService: UserService,
               private fb: FormBuilder) { }
 
   ngOnInit() {
+
   }
 
-  addMorty() {
-    this.mortyService.addMorty();
-  }
 }

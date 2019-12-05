@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -12,8 +11,22 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MortyService } from './services/morty.service';
-
+import { UserService } from './services/user.service';
+import { CreateUserComponent } from './components/create-user/create-user.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserEditProfileComponent } from './components/user-edit-profile/user-edit-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
+  MatTableModule,
+  MatIconModule,
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule } from "@angular/material";
+import { AdminUserListComponent } from './components/admin-user-list/admin-user-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +35,11 @@ import { MortyService } from './services/morty.service';
     RegistrationComponent,
     AboutUsComponent,
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    CreateUserComponent,
+    UserProfileComponent,
+    UserEditProfileComponent,
+    AdminUserListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +47,19 @@ import { MortyService } from './services/morty.service';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    InMemoryWebApiModule
+    InMemoryWebApiModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
-  providers: [ MortyService ],
+  providers: [ UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
