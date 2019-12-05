@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,7 +15,18 @@ import { UserService } from './services/user.service';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UserEditProfileComponent } from './components/user-edit-profile/user-edit-profile.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
+  MatTableModule,
+  MatIconModule,
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule } from "@angular/material";
+import { AdminUserListComponent } from './components/admin-user-list/admin-user-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +38,8 @@ import { UserEditProfileComponent } from './components/user-edit-profile/user-ed
     FooterComponent,
     CreateUserComponent,
     UserProfileComponent,
-    UserEditProfileComponent
+    UserEditProfileComponent,
+    AdminUserListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +47,17 @@ import { UserEditProfileComponent } from './components/user-edit-profile/user-ed
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    InMemoryWebApiModule
+    InMemoryWebApiModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [ UserService ],
   bootstrap: [AppComponent]

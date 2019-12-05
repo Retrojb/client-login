@@ -7,10 +7,11 @@ import { HomeComponent } from './components/home/home.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { UserEditProfileComponent } from './components/user-edit-profile/user-edit-profile.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AdminUserListComponent } from './components/admin-user-list/admin-user-list.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '/home', pathMatch: 'full'
+    path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
     path: 'home', component: HomeComponent, data: { title: 'Welcome to Life Style Management'}
@@ -22,16 +23,19 @@ const routes: Routes = [
     path: 'registration', component: RegistrationComponent, data: { title: 'Registration'}
   },
   {
-    path: 'aboutUs', component: AboutUsComponent, data: { title: 'About Us'}
+    path: 'about-us', component: AboutUsComponent, data: { title: 'About Us'}
   },
   {
-    path: 'createUser', component: CreateUserComponent, data: { title: 'Registering?'}
+    path: 'create-user', component: CreateUserComponent, data: { title: 'Registering?'}
   },
   {
-    path: 'editUser', component: UserEditProfileComponent, data: {title: 'Edit Profile'}
+    path: 'edit-user/:id', component: UserEditProfileComponent, data: {title: 'Edit Profile'}
   },
   {
-    path: 'userProfile', component: UserProfileComponent, data: { title: 'Your profile' }
+    path: 'user-profile', component: UserProfileComponent, data: { title: 'Your profile' }
+  },
+  {
+    path: 'admin-user-list', component: AdminUserListComponent, data: { title: 'Your ADMIN' }
   },
 ];
 
